@@ -7,6 +7,8 @@ services:
       - devopslab
     ports:
       - "8080:8080"
+    volumes:
+      - /home/mhnj77/jenkins_home:/var/jenkins_home
     environment:
       - DOCKER_HOST=tcp://socat:2375
     depends_on:
@@ -19,7 +21,6 @@ services:
     command: tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/mhnj77/jenkins_home:/var/jenkins_home
     expose:
       - "2375"
   postgres:
