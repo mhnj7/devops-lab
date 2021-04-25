@@ -10,20 +10,7 @@ services:
       - "50000:50000"
     volumes:
       - /home/mhnj7/jenkins_home:/var/jenkins_home
-    environment:
-      - DOCKER_HOST=tcp://socat:2375
-    depends_on:
-      - socat
-  socat:
-    container_name: socat
-    image: alpine/socat:latest
-    networks:
-      - devopslab
-    command: tcp-listen:2375,fork,reuseaddr unix-connect:/var/run/docker.sock
-    volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    expose:
-      - "2375"
   postgres:
     container_name: postgres
     image: postgres:latest
