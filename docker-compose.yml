@@ -9,7 +9,7 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - /home/mhnj77/jenkins_home:/var/jenkins_home
+      - /home/mhnj7/jenkins_home:/var/jenkins_home
     environment:
       - DOCKER_HOST=tcp://socat:2375
     depends_on:
