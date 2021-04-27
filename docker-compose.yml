@@ -2,7 +2,7 @@ version: "3.5"
 services:
   jenkins:
     container_name: jenkins
-    image: mhnj7/jenkins-mh:lts
+    image: mhnj7/jenkins-mh:latest
     networks:
       - devopslab
     ports:
